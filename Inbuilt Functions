@@ -1,0 +1,44 @@
+INBUILT FUNCTIONS
+
+1.	glutInit(&argc, argv)
+The interaction betwwen the windowing system and openGL is initiated. The arguments allow the user to pass command-line arguments.
+
+2.	glutInitDisplayMode(GLUT_RGBA|GLUT_DOUBLE|GLUT_DEPTH)
+The color scheme used follows RGB format. Depth is enabled for hidden surfaces and  double buffers are used. ‘A’ or alpha  specifies the opacity.
+
+3.	glutInitWindowSize(int width, int height)
+Specifies the height and width of the window in pixels.
+
+4.	glutInitWindowPosition(int x-co-ordinate, int y-co-ordinate)
+Specifies the position of the window using co-ordinates.
+
+5.	glutCreateWindow(“WindowTitle”)
+Creates the window with the given title.
+
+6.	glutDisplayFunc(void (*func)(void))
+It registers the display function that is executed when the window needs to be redrawn.
+
+7.	glutSwapBuffers()
+Swaps the front and back buffers. The front buffer is always the one displayed, whereas the back buffer if the one into which we draw.
+
+8.	glPushMatrix() and glPopMatrix()
+Depending on the matrix mode, stack contents are modified.
+
+9.	glEnable()
+It enables different functions in OpenGL. For instance, the keyboard function can be enabled.
+
+10.	glMatrixMode()
+It specifies the matrix that is modified. The matrices can be GL_MODELVIEW , GL_PROJECTION or GL_TEXTURE.
+
+11.	glLoadIdentity()
+It sets the current transformation matrix to an identity matrix.
+
+12.	glBegin(mode)
+It initiates new primitive of type mode.  The modes can be GL_POINTS, GL_LINES, GL_LINE_LOOP.
+
+13.	gluLookAt(cop_x,cop_y,cop_z,at_x,at_y,at_z,up_x,up_y,up_z)
+Set the position of the camera depending on parameters specified.
+
+14.	gluPerspective (field_of_view,aspect_ratio,near,far)
+Set viewing in perspective mode as specified by the parameters.
+	
