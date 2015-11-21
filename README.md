@@ -49,3 +49,18 @@ OpenGL is a state machine. You put it into various states (or modes) that then r
 	
  Some state variables have a more specific query command (such as glGetLight*() ,
 glGetError(), or glGetPolygonStipple()). In addition, you can save a collection of state variables on an attribute stack with glPushAttrib() or glPushClientAttrib(), temporarily modify them, and later restore  the values with glPopAttrib() or glPopClientAttrib().
+
+The picture below is that of the Pac-Man, the protagonist of the arcade game we will simulate.
+https://cloud.githubusercontent.com/assets/8260656/11317931/638983da-9065-11e5-936c-3da0368786ca.png
+
+					Fig 2.1 Pac-man
+The white dot next to the Pac-man are called pebbles. Each pebble eaten by the Pac-man is equivalent to one point gained.
+https://cloud.githubusercontent.com/assets/8260656/11317932/63908428-9065-11e5-9394-a9387fa05019.png
+The above four figures are called ghosts in the arcade game. These ghosts chase the Pac-Man throughout the grid. When it makes contact, the Pac-Man is destroyed and has to restart the game after losing a life. Once all the lives are exhausted, the game is over.
+
+The ghosts can be rendered useless when the Pac-Man consumes a giant pebble. This turns the ghost blue and when consumed by the Pac-Man goes to its original place and starts again.
+The blue Pac-Man looks like the picture shown below.
+https://cloud.githubusercontent.com/assets/8260656/11317934/63925ae6-9065-11e5-9a52-c553a183171a.png
+
+The actual Pac-Man game looks like the following picture:
+https://cloud.githubusercontent.com/assets/8260656/11317933/63922274-9065-11e5-9eea-f4ba7719d127.png
