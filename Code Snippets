@@ -66,3 +66,47 @@ function where the arguments are the size of the Pac-Man. The Translate() move t
 to its initial position on the grid created. 
 glColor3f() obtains the yellow colour for the Pac-Man.
 
+void Write(char *string)
+{
+	while (*string)
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, *string++);
+}
+
+The above function, Write() as well as print(), the character is taken is the font mentioned through in-built commands and is printed on the output file graphically.
+
+void P_Reinit()
+{
+a = 13.5;
+	b = 23;
+	angle1 = 90;
+	animate = false;
+	Pac();
+}
+
+
+void G_Reinit(void)
+{
+start_timer = 3;
+int start_x[4] = { 11, 12, 15, 16 };
+float ghost_colors[4][3] = { { 255, 0, 0 }, { 120, 240, 120 }, { 255, 200, 200 }, { 255, 125, 0 } };
+	
+for (int i = 0; i < num_ghosts; i++)
+{
+	ghost[i]->Reinit();
+	ghost[i]->x = start_x[i];
+	ghost[i]->y = 14;
+	ghost[i]->eaten = false;
+ghost[i]->jail_timer = i * 33 + 66;
+	ghost[i]->max_speed = 0.1 - 0.01*(float)i;
+	ghost[i]->speed = ghost[i]->max_speed;
+
+	for (int j = 0; j < 3; j++)
+		ghost[i]->color[j] = ghost_colors[i][j] / 255.0f;
+}
+}
+
+
+
+As the number of pebbles are restored, while reinitialisation occurs even the Pac-Man and the Ghosts have to be restored. For that, the above functions are used. In P_reinit(), a simple reinitialisation of the values associated with it and returning it to its original position is done.
+In G_reinit() however, extra functions need to be added. This is because G_reinit() is called when the ghosts have been in their edible state and now need to come back to the normal colour as well their normal speeds. In order to do this, the pointer ghost[i] of class Ghost is used to reinitalise all the four ghosts.
+
